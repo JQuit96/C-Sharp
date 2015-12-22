@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+Author: Julian D. Quitian
+Date: 12/22/2015
+*/
+
+/// <summary>
+/// Basic unit converter program. For added complexity, loop could be added to allow for program re-run and exit with key 'q' only by using Environment.Exit()
+/// </summary>
 namespace Unit_Converter
 {
     class Program
@@ -13,6 +21,7 @@ namespace Unit_Converter
             char selection;
             bool endFlag;
 
+            
             Console.WriteLine("{0,23}{1}", "Unit Converter\n",
                                       "------------------------------");
             Console.WriteLine("[1]Fahrenheit <-> Celsius\n" +
@@ -31,27 +40,27 @@ namespace Unit_Converter
                 {
                     case '1':
                         {
-                            GetTemp();
+                            GetTemp();          //Option 1
                             break;
                         }
                     case '2':
                         {
-                            GetLength();
+                            GetLength();        //Option 2
                             break;
                         }
                     case '3':
                         {
-                            GetWeight();
+                            GetWeight();        //Option 3
                             break;
                         }
                     case '4':
                         {
-                            GetVolume();
+                            GetVolume();        //Option 4
                             break;
                         }
                     case '5':
                         {
-                            GetAngle();
+                            GetAngle();         //Option 5
                             break;
                         }
                     default:
@@ -63,6 +72,9 @@ namespace Unit_Converter
                 }
             } while (endFlag == false);
         }
+        /// <summary>
+        /// Option 1. Prints the conversion to the screen. Uses conversion methods FahrenheitToCelsius(degrees) and CelsiusToFahrenheit(degrees)
+        /// </summary>
         static void GetTemp()
         {
             char selection;
@@ -117,17 +129,30 @@ namespace Unit_Converter
                 }
             } while (endFlag == false);
         }
+        /// <summary>
+        /// Temperature conversion method
+        /// </summary>
+        /// <param name="fahr"></param>
+        /// <returns>Converted degrees in celsius</returns>
         static double FahrenheitToCelsius(double fahr)
         {
             double celsius = (fahr - 32) * (5.0 / 9.0);
             return celsius;
         }
+        /// <summary>
+        /// Temperature conversion method
+        /// </summary>
+        /// <param name="celsius"></param>
+        /// <returns>Converted degrees in fahrenheit</returns>
         static double CelsiusToFahrenheit(double celsius)
         {
             double fahr = celsius * (9.0 / 5.0) + 32;
             return fahr;
         }
 
+        /// <summary>
+        /// Option 2. Prints the conversion to the screen. Uses conversion methods InchesToCentimeters(length) and CentimetersToInches(length)
+        /// </summary>
         static void GetLength()
         {
             char selection;
@@ -182,17 +207,30 @@ namespace Unit_Converter
                 }
             } while (endFlag == false);
         }
+        /// <summary>
+        /// Length conversion method
+        /// </summary>
+        /// <param name="inches"></param>
+        /// <returns>Converted length in centimeters</returns>
         static double InchesToCentimeters(double inches)
         {
             double centimeters = inches * 2.54;
             return centimeters;
         }
+        /// <summary>
+        /// Length conversion method
+        /// </summary>
+        /// <param name="centimeters"></param>
+        /// <returns>Converted length in inches</returns>
         static double CentimetersToInches(double centimeters)
         {
             double inches = centimeters / 2.54;
             return inches;
         }
 
+        /// <summary>
+        /// Option 3. Prints the conversion to the screen. Uses conversion methods PoundsToKilograms(weight) and KilogramsToPounds(weight)
+        /// </summary>
         static void GetWeight()
         {
             char selection;
@@ -247,17 +285,30 @@ namespace Unit_Converter
                 }
             } while (endFlag == false);
         }
+        /// <summary>
+        /// Weight conversion method
+        /// </summary>
+        /// <param name="pounds"></param>
+        /// <returns>Converted weight in kilograms</returns>
         static double PoundsToKilograms(double pounds)
         {
             double kilograms = pounds * 0.45359237;
             return kilograms;
         }
+        /// <summary>
+        /// Weight conversion method
+        /// </summary>
+        /// <param name="kilograms"></param>
+        /// <returns>Converted weight in pounds</returns>
         static double KilogramsToPounds(double kilograms)
         {
             double pounds = kilograms / 0.45359237;
             return pounds;
         }
 
+        /// <summary>
+        /// Option 4. Prints the conversion to the screen. Uses conversion methods GallonsToLiters(volume) and LitersToGallons(volume)
+        /// </summary>
         static void GetVolume()
         {
             char selection;
@@ -312,17 +363,30 @@ namespace Unit_Converter
                 }
             } while (endFlag == false);
         }
+        /// <summary>
+        /// Volume conversion method
+        /// </summary>
+        /// <param name="gallons"></param>
+        /// <returns>Converted volume in liters</returns>
         static double GallonsToLiters(double gallons)
         {
             double liters = gallons * 3.78541178;
             return liters;
         }
+        /// <summary>
+        /// Volume conversion method
+        /// </summary>
+        /// <param name="liters"></param>
+        /// <returns>Converted volume in gallons</returns>
         static double LitersToGallons(double liters)
         {
             double gallons = liters / 3.78541178;
             return gallons;
         }
 
+        /// <summary>
+        /// Option 5. Prints the conversion to the screen. Uses conversion methods RadiansToDegrees(angle) and DegreesToRadians(angle)
+        /// </summary>
         static void GetAngle()
         {
             char selection;
@@ -377,11 +441,21 @@ namespace Unit_Converter
                 }
             } while (endFlag == false);
         }
+        /// <summary>
+        /// Angle conversion method
+        /// </summary>
+        /// <param name="radians"></param>
+        /// <returns>Converted angle in degrees</returns>
         static double RadiansToDegrees(double radians)
         {
             double degrees = radians * (180 / Math.PI);
             return degrees;
         }
+        /// <summary>
+        /// Angle conversion method
+        /// </summary>
+        /// <param name="degrees"></param>
+        /// <returns>Converted angle in radians</returns>
         static double DegreesToRadians(double degrees)
         {
             double radians = degrees * (Math.PI / 180);
