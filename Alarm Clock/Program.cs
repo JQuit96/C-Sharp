@@ -127,10 +127,9 @@ namespace Alarm_Clock
         static void Main(string[] args)
         {
             SpeechSynthesizer cyby = new SpeechSynthesizer();   //Used to make Cyby speak
-            SoundPlayer player = new SoundPlayer(@"C:\Users\Julian D. Quitian\Downloads\a.wav");    //Used to play song
+            SoundPlayer player = new SoundPlayer(@"C:\Users\Julian D. Quitian\Downloads\a.wav");    //Used to play song. Replace with .wav file to play your song.
             AlarmClock alarm1 = new AlarmClock();   //Declaring and Initializing alarm1
             DateTime now;   //Declaring DateTime object.
-
 
             cyby.Speak("Hello! I am Cybertron, your personal alarm clock. When would you like to wake up?");
 
