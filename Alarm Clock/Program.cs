@@ -7,9 +7,14 @@ using System.Threading;
 using System.Media;             //Used to play song (SoundPlayer)
 using System.Speech.Synthesis;  //Just for fun. Learning about this namespace
 
-
+/// <summary>
+/// Basic alarm clock
+/// </summary>
 namespace Alarm_Clock
 {
+    /// <summary>
+    /// Alarm Clock object. Song is integrated separately, but could be included in AlarmClock class.
+    /// </summary>
     class AlarmClock
     {
         public int day, month, year, hour, minute, second;
@@ -121,13 +126,10 @@ namespace Alarm_Clock
     {
         static void Main(string[] args)
         {
-            SpeechSynthesizer cyby = new SpeechSynthesizer();
-
-            SoundPlayer player = new SoundPlayer(@"C:\Users\Julian D. Quitian\Downloads\a.wav");
-
-            AlarmClock alarm1 = new AlarmClock();
-
-            DateTime now = DateTime.Now;
+            SpeechSynthesizer cyby = new SpeechSynthesizer();   //Used to make Cyby speak
+            SoundPlayer player = new SoundPlayer(@"C:\Users\Julian D. Quitian\Downloads\a.wav");    //Used to play song
+            AlarmClock alarm1 = new AlarmClock();   //Declaring and Initializing alarm1
+            DateTime now;   //Declaring DateTime object.
 
 
             cyby.Speak("Hello! I am Cybertron, your personal alarm clock. When would you like to wake up?");
@@ -139,6 +141,7 @@ namespace Alarm_Clock
             alarm1.inputMinute();
             alarm1.inputSecond();
 
+            //Loop never ends. Close program to turn off alarm.
             while (1 == 1)
             {
                 now = DateTime.Now;
