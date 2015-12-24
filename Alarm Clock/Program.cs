@@ -7,6 +7,11 @@ using System.Threading;
 using System.Media;             //Used to play song (SoundPlayer)
 using System.Speech.Synthesis;  //Just for fun. Learning about this namespace
 
+/*
+Author: Julian D. Quitian
+Date: 12/23/2015
+*/
+
 /// <summary>
 /// Basic alarm clock
 /// </summary>
