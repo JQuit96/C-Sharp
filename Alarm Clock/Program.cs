@@ -132,7 +132,7 @@ namespace Alarm_Clock
         static void Main(string[] args)
         {
             SpeechSynthesizer cyby = new SpeechSynthesizer();   //Used to make Cyby speak
-            SoundPlayer player = new SoundPlayer(@"C:\Users\Julian D. Quitian\Downloads\a.wav");    //Used to play song. Replace with .wav file to play your song.
+            SoundPlayer player = new SoundPlayer(@"C:\Users\Julian D. Quitian\Downloads\a.wav");    //Used to play song. Replace with .wav file to play your song
             AlarmClock alarm1 = new AlarmClock();   //Declaring and Initializing alarm1
             DateTime now;   //Declaring DateTime object.
 
@@ -157,7 +157,7 @@ namespace Alarm_Clock
                                     if (now.Second == alarm1.second)
                                     {
                                         cyby.Speak("Rise and shine! The sun is shining, the birds are chirping. Wake up immediately!");
-                                        System.Threading.Thread.Sleep(5 * 1000);
+                                        System.Threading.Thread.Sleep(4 * 1000);
                                         cyby.Speak("Fine! Let's do this the hard way!");
                                         player.PlayLooping();
                                     }
